@@ -1,0 +1,232 @@
+.hero-outer {
+  width: 100vw;
+  height: 100vh;
+  &__firstCubes {
+    position: absolute;
+    z-index: -1;
+    width: 60%;
+    height: 90%;
+    right: -28%;
+    top: -20%;
+  }
+  &__secondCubes {
+    position: absolute;
+    z-index: 1;
+    width: 300px;
+    bottom: -100px;
+    left: -200px;
+  }
+  .hero-inner {
+    max-width: 1100px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    &-right {
+      margin-left: 150px;
+      &__mockup {
+        float: right;
+      }
+    }
+    &-left {
+      float: left;
+      &__textWithInput {
+        margin-bottom: 130px;
+        h1 {
+          font-weight: 900;
+          font-size: 70px;
+          line-height: 72px;
+          color: #000000;
+          margin-bottom: 25px;
+          width: 570px;
+        }
+        p {
+          max-width: 100%;
+          width: 470px;
+          font-weight: 300;
+          font-size: 21px;
+          line-height: 32px;
+          color: #000000;
+          margin-bottom: 30px;
+        }
+        form {
+          width: 450px;
+          height: 54px;
+          box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05),
+            0px 6px 12px rgba(0, 0, 0, 0.05);
+          border-radius: 4px;
+          background: #ffffff;
+          border: 0.5px solid rgba(0, 0, 0, 0.05);
+          overflow: hidden;
+          .input {
+            height: 100%;
+            display: inline-block;
+            padding: 8px 15px;
+            width: 55%;
+            span {
+              display: block;
+              font-weight: bold;
+              font-size: 12px;
+              color: #540cfa;
+              margin-bottom: 6px;
+            }
+            input {
+              width: 100%;
+              border: none;
+              font-size: 16px;
+              color: #000000;
+              outline: none;
+              &::placeholder {
+                opacity: 0.3;
+              }
+            }
+          }
+          button {
+            box-sizing: content-box;
+            display: inline-block;
+            width: 140px;
+            height: 100%;
+            float: right;
+            font-weight: bold;
+            font-size: 16px;
+            color: #ffffff;
+            padding: 1px 12px 0;
+            border: none;
+            background: #540cfa;
+            cursor: pointer;
+          }
+        }
+      }
+      &__compatibleWith {
+        position: relative;
+        z-index: -2;
+        h5 {
+          font-weight: 600;
+          font-size: 12px;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          color: #000000;
+          opacity: 0.3;
+          margin-bottom: 15px;
+        }
+        .corp {
+          width: 420px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          svg {
+            width: 100%;
+            max-width: 93px;
+            max-height: 30px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1160px) {
+  .hero-outer {
+    .hero-inner {
+      max-width: none;
+      padding: 0 30px;
+      margin: 0;
+      justify-content: space-between;
+      &-right {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .hero-outer {
+    .hero-inner {
+      &-right {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 845px) {
+  .hero-outer {
+    height: auto;
+    padding-top: 110px;
+    &__firstCubes {
+      right: -35%;
+      top: 250px;
+      width: 500px;
+    }
+    &__secondCubes {
+      bottom: -15%;
+      width: 370px;
+    }
+    .hero-inner {
+      flex-direction: column;
+      &-left {
+        &__textWithInput {
+          margin-bottom: 40px;
+          form {
+            width: 100%;
+          }
+        }
+        &__compatibleWith {
+          .corp {
+            width: 100%;
+          }
+        }
+      }
+      &-right {
+        margin-top: 45px;
+        display: block;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .hero-outer {
+    .hero-inner {
+      padding: 0 16px;
+      &-left {
+        width: 100%;
+        &__textWithInput {
+          h1, p, {
+            width: 100%;
+          }
+          h1 {
+            font-size: 42px;
+            line-height: 48px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .hero-outer {
+    &__firstCubes {
+      right: -80%;
+      top: 200px;
+      width: 460px;
+    }
+    .hero-inner {
+      &-left {
+        &__textWithInput {
+          form {
+            .input {
+              padding-right: 0;
+              width: 50%;
+            }
+            button {
+              padding: 1px 0 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

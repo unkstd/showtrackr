@@ -1,0 +1,14 @@
+@import "fonts";
+
+.hidden {
+  display: none;
+}
+
+#app {
+  opacity: 0;
+  @import "header/header";
+  @import "header/hero";
+
+  @import "content/content";
+  @import "footer";
+}
