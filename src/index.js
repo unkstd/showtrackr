@@ -3,14 +3,15 @@ import "./scss/style.scss";
 
 import Swiper from "swiper";
 import "swiper/dist/css/swiper.min.css";
-
 import Rellax from "rellax";
-
 import { TweenMax } from "gsap";
 
-window.scrollTo(0, 0);
+window.scrollTo(0, 0); // Scroll to top
 
 window.onload = () => {
+  /***
+  * Animations
+  ***/
   TweenMax.fromTo(
     document.getElementById("app"),
     2.5,
@@ -43,89 +44,6 @@ window.onload = () => {
       }
     }
   );
-  const initSwiper = new Swiper(".swiper-container", {
-    loop: true,
-    slidesPerView: "auto",
-    centeredSlides: true,
-    freeMode: true,
-    simulateTouch: false,
-    noSwiping: true,
-    allowSlidePrev: false,
-    allowSlideNext: false
-  });
-
-  const testimonials = new Swiper(".swiper-container-tweet", {
-    loop: true,
-    direction: "vertical",
-    freeMode: true,
-    slidesPerView: "auto",
-    centeredSlides: true,
-    simulateTouch: false,
-    noSwiping: true,
-    allowSlidePrev: false,
-    allowSlideNext: false
-  });
-
-  document.getElementById("pageHeader").classList.remove("scrolled");
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 0) {
-      document.getElementById("pageHeader").classList.add("scrolled");
-    } else {
-      document.getElementById("pageHeader").classList.toggle("scrolled");
-    }
-
-    document.getElementById("seriesSlider").style = `
-    transition-duration: 0ms; transform: translate3d(${((window.scrollY -
-      1146.5) /
-      5) *
-      -1 -
-      200}px, 0px, 0px);
-  `;
-
-    document.querySelectorAll(".swiper-container-tweet")[0].style = `
-    transition-duration: 0ms; transform: translate3d(0px, ${((window.scrollY -
-      1146.5) /
-      8) *
-      -1 +
-      100}px, 0px);
-  `;
-
-    document.querySelectorAll(".swiper-container-tweet")[1].style = `
-    transition-duration: 0ms; transform: translate3d(0px, ${(window.scrollY -
-      1146.5) /
-      8 -
-      300}px, 0px);
-  `;
-
-    document.getElementById("mobileTweets").style = `
-    transition-duration: 0ms; transform: translate3d(${((window.scrollY -
-      1146.5) /
-      5) *
-      -1 -
-      200}px, 0px, 0px);
-  `;
-  });
-
-  const initRellax = new Rellax(".parallaxItem", {
-    speed: -2
-  });
-
-  if (window.innerWidth <= 1155) {
-    document
-      .getElementById("mobileTweets")
-      .classList.add("swiper-container-mobileTweets");
-    document.getElementById("mobileTweets").classList.remove("hidden");
-    const mobileTweets = new Swiper(".swiper-container-mobileTweets", {
-      loop: true,
-      slidesPerView: "auto",
-      centeredSlides: true,
-      freeMode: true,
-      simulateTouch: false,
-      noSwiping: true,
-      allowSlidePrev: false,
-      allowSlideNext: false
-    });
-  }
 
   document.querySelectorAll("nav ul li").forEach((link, index) => {
     TweenMax.from(link, 1, {
@@ -208,4 +126,97 @@ window.onload = () => {
       }
     }
   ).delay(0.25);
+
+  /***
+  * Init sliders
+  ***/
+
+  const initSwiper = new Swiper(".swiper-container", {
+    loop: true,
+    slidesPerView: "auto",
+    centeredSlides: true,
+    freeMode: true,
+    simulateTouch: false,
+    noSwiping: true,
+    allowSlidePrev: false,
+    allowSlideNext: false
+  });
+
+  const testimonials = new Swiper(".swiper-container-tweet", {
+    loop: true,
+    direction: "vertical",
+    freeMode: true,
+    slidesPerView: "auto",
+    centeredSlides: true,
+    simulateTouch: false,
+    noSwiping: true,
+    allowSlidePrev: false,
+    allowSlideNext: false
+  });
+
+  document.getElementById("pageHeader").classList.remove("scrolled");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 0) {
+      document.getElementById("pageHeader").classList.add("scrolled");
+    } else {
+      document.getElementById("pageHeader").classList.toggle("scrolled");
+    }
+
+    /***
+    * Sliders animations
+    ***/
+
+    document.getElementById("seriesSlider").style = `
+      transition-duration: 0ms; transform: translate3d(${((window.scrollY -
+        1146.5) /
+        5) *
+        -1 -
+        200}px, 0px, 0px);
+    `;
+
+    document.querySelectorAll(".swiper-container-tweet")[0].style = `
+      transition-duration: 0ms; transform: translate3d(0px, ${((window.scrollY -
+        1146.5) /
+        8) *
+        -1 +
+        100}px, 0px);
+    `;
+
+    document.querySelectorAll(".swiper-container-tweet")[1].style = `
+      transition-duration: 0ms; transform: translate3d(0px, ${(window.scrollY -
+        1146.5) /
+        8 -
+        300}px, 0px);
+    `;
+
+    document.getElementById("mobileTweets").style = `
+      transition-duration: 0ms; transform: translate3d(${((window.scrollY -
+        1146.5) /
+        5) *
+        -1 -
+        200}px, 0px, 0px);
+    `;
+  });
+
+  // Add class for items with parallax
+  const initRellax = new Rellax(".parallaxItem", {
+    speed: -2
+  });
+
+  if (window.innerWidth <= 1155) { // Toggle mobile tweets
+    document
+      .getElementById("mobileTweets")
+      .classList.add("swiper-container-mobileTweets");
+    document.getElementById("mobileTweets").classList.remove("hidden");
+    const mobileTweets = new Swiper(".swiper-container-mobileTweets", {
+      loop: true,
+      slidesPerView: "auto",
+      centeredSlides: true,
+      freeMode: true,
+      simulateTouch: false,
+      noSwiping: true,
+      allowSlidePrev: false,
+      allowSlideNext: false
+    });
+  }
 };

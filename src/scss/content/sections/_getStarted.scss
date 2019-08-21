@@ -59,6 +59,9 @@
         font-size: 16px;
         color: #000000;
         outline: none;
+        &::placeholder {
+          opacity: 0.3;
+        }
       }
     }
     button {
@@ -82,9 +85,18 @@
   &__getStarted {
     width: 100%;
     padding: 0 30px;
-    span, h1, p, form {
+    span,
+    h1,
+    p,
+    form {
       width: 100%;
     }
+  }
+}
+
+@media screen and (max-width: 630px) {
+  &__getStarted {
+    padding: 0 16px !important;
   }
 }
 
@@ -103,6 +115,15 @@
       font-size: 18px;
       line-height: 27px;
       margin-bottom: 30px;
+    }
+    form {
+      .input {
+        padding-right: 0;
+        width: 50%;
+      }
+      button {
+        padding: 1px 0 0;
+      }
     }
   }
 }

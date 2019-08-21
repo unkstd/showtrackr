@@ -71,7 +71,7 @@ module.exports = {
       { from: `${PATHS.src}/static`, to: "" }
     ]),
     new HtmlWebpackPlugin({
-      template: `${PATHS.src}/templates/index.html`
+      template: `${PATHS.src}/index.html`
     }),
     new UnCSSPlugin()
   ],

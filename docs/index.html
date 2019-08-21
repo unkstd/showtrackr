@@ -44,7 +44,7 @@
     <meta name="msapplication-TileColor" content="#540cfa" />
     <meta name="msapplication-TileImage" content="mstile-144x144.png" />
     <meta name="theme-color" content="#ffffff" />
-  <link href="vendors.e162bf62bab479d45a2c.css" rel="stylesheet"><link href="app.e162bf62bab479d45a2c.css" rel="stylesheet"></head>
+  <link href="vendors.5533433537889d2adf66.css" rel="stylesheet"><link href="app.5533433537889d2adf66.css" rel="stylesheet"></head>
   <body>
     <div id="app">
       <header id="pageHeader" class="header-outer">
@@ -478,12 +478,11 @@
                   <source type="image/png" srcset="./assets/img/iphone-x-mockup.png">
                   <img src="./assets/img/iphone-x-mockup.png" alt />
                 </picture>
-                <img
-                  class="web parallaxItem"
-                  src="./assets/img/webAppMockup.jpg"
-                  alt=""
-                  data-rellax-speed="-0.2"
-                />
+                <picture class="web parallaxItem" data-rellax-speed="-0.2">
+                  <source type="image/webp" srcset="./assets/img/webAppMockup.webp">
+                  <source type="image/jpeg" srcset="./assets/img/webAppMockup.jpg">
+                  <img src="./assets/img/webAppMockup.jpg" alt />
+                </picture>
               </div>
             </div>
           </section>
@@ -802,18 +801,16 @@
             <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.55556 11.4294V4.57175L14.6667 8.012L8.55556 11.4294ZM21.78 3.45168C21.78 3.45168 21.5649 1.88356 20.9061 1.19323C20.0689 0.286878 19.1314 0.283449 18.7012 0.230874C15.6237 0 11.0061 0 11.0061 0H10.9963C10.9963 0 6.37756 0 3.3 0.230874C2.86856 0.283449 1.93111 0.288021 1.09389 1.19323C0.433889 1.88356 0.22 3.45168 0.22 3.45168C0.22 3.45168 0 5.29181 0 7.13194V8.86006C0 10.7002 0.22 12.5403 0.22 12.5403C0.22 12.5403 0.433889 14.1096 1.09389 14.7999C1.93111 15.7051 3.02989 15.6765 3.52 15.7714C5.28 15.9463 11 16 11 16C11 16 15.6224 15.9931 18.7 15.7623C19.1314 15.7097 20.0689 15.7051 20.9061 14.7988C21.5661 14.1073 21.78 12.5392 21.78 12.5392C21.78 12.5392 22 10.699 22 8.85892V7.13194C22 5.29181 21.78 3.45168 21.78 3.45168Z" fill="black"/></svg>
           </a>
         </div>
-        <p>Copyright 2018 All rights reserved — Designed by <a href="https://danielkorpai.com">Daniel Korpai</a>. Developed by <a href="https://unkstd.github.io/">Michael Vetkal</a></p>
+        <p>Copyright 2018 All rights reserved — Designed by <a href="https://danielkorpai.com">Daniel Korpai</a> — Developed by <a href="https://unkstd.github.io/">Michael Vetkal</a></p>
       </footer>
     </div>
 
     <script>
-      // Check that service workers are supported
       if ("serviceWorker" in navigator) {
-        // Use the window load event to keep the page load performant
         window.addEventListener("load", () => {
           navigator.serviceWorker.register("./service-worker.js");
         });
       }
     </script>
-  <script type="text/javascript" src="assets/js/vendors.e162bf62bab479d45a2c.js"></script><script type="text/javascript" src="assets/js/app.e162bf62bab479d45a2c.js"></script></body>
+  <script type="text/javascript" src="assets/js/vendors.5533433537889d2adf66.js"></script><script type="text/javascript" src="assets/js/app.5533433537889d2adf66.js"></script></body>
 </html>
