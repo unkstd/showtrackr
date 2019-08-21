@@ -8,6 +8,8 @@ import Rellax from "rellax";
 
 import { TweenMax } from "gsap";
 
+window.scrollTo(0, 0);
+
 window.onload = () => {
   TweenMax.fromTo(
     document.getElementById("app"),
@@ -40,14 +42,16 @@ window.onload = () => {
         transform: "scale(1)"
       }
     }
-  )
+  );
   const initSwiper = new Swiper(".swiper-container", {
     loop: true,
     slidesPerView: "auto",
     centeredSlides: true,
     freeMode: true,
     simulateTouch: false,
-    noSwiping: true
+    noSwiping: true,
+    allowSlidePrev: false,
+    allowSlideNext: false
   });
 
   const testimonials = new Swiper(".swiper-container-tweet", {
@@ -57,10 +61,19 @@ window.onload = () => {
     slidesPerView: "auto",
     centeredSlides: true,
     simulateTouch: false,
-    noSwiping: true
+    noSwiping: true,
+    allowSlidePrev: false,
+    allowSlideNext: false
   });
 
+  document.getElementById("pageHeader").classList.remove("scrolled");
   window.addEventListener("scroll", () => {
+    if (window.scrollY > 0) {
+      document.getElementById("pageHeader").classList.add("scrolled");
+    } else {
+      document.getElementById("pageHeader").classList.toggle("scrolled");
+    }
+
     document.getElementById("seriesSlider").style = `
     transition-duration: 0ms; transform: translate3d(${((window.scrollY -
       1146.5) /
@@ -108,7 +121,9 @@ window.onload = () => {
       centeredSlides: true,
       freeMode: true,
       simulateTouch: false,
-      noSwiping: true
+      noSwiping: true,
+      allowSlidePrev: false,
+      allowSlideNext: false
     });
   }
 

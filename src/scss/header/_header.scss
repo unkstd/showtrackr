@@ -6,6 +6,7 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   background: #ffffff;
   overflow: hidden;
+  transition: box-shadow .3s ease-out;
   .header-inner {
     max-width: 1100px;
     width: 100%;
@@ -68,6 +69,11 @@
       }
     }
   }
+}
+
+.header-outer.scrolled {
+  transition: box-shadow .3s ease-out;
+  box-shadow: 0px 3px 50px -12px rgba(0, 0, 0, 0.2);
 }
 
 @media screen and (max-width: 1160px) {

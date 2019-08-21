@@ -16,6 +16,7 @@
       html {
         box-sizing: border-box;
         scroll-behavior: smooth;
+        overflow-x: hidden;
       }
 
       * {
@@ -46,7 +47,7 @@
   </head>
   <body>
     <div id="app">
-      <header class="header-outer">
+      <header id="pageHeader" class="header-outer">
         <div class="header-inner">
           <div class="header-inner__logo">
             <svg viewBox="0 0 95 14" xmlns="http://www.w3.org/2000/svg">
@@ -810,7 +811,7 @@
       if ("serviceWorker" in navigator) {
         // Use the window load event to keep the page load performant
         window.addEventListener("load", () => {
-          navigator.serviceWorker.register("/service-worker.js");
+          navigator.serviceWorker.register("./service-worker.js");
         });
       }
     </script>

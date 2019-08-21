@@ -16,6 +16,7 @@
       html {
         box-sizing: border-box;
         scroll-behavior: smooth;
+        overflow-x: hidden;
       }
 
       * {
@@ -43,10 +44,10 @@
     <meta name="msapplication-TileColor" content="#540cfa" />
     <meta name="msapplication-TileImage" content="mstile-144x144.png" />
     <meta name="theme-color" content="#ffffff" />
-  <link href="vendors.b81bf959442454116307.css" rel="stylesheet"><link href="app.b81bf959442454116307.css" rel="stylesheet"></head>
+  <link href="vendors.e162bf62bab479d45a2c.css" rel="stylesheet"><link href="app.e162bf62bab479d45a2c.css" rel="stylesheet"></head>
   <body>
     <div id="app">
-      <header class="header-outer">
+      <header id="pageHeader" class="header-outer">
         <div class="header-inner">
           <div class="header-inner__logo">
             <svg viewBox="0 0 95 14" xmlns="http://www.w3.org/2000/svg">
@@ -810,9 +811,9 @@
       if ("serviceWorker" in navigator) {
         // Use the window load event to keep the page load performant
         window.addEventListener("load", () => {
-          navigator.serviceWorker.register("/service-worker.js");
+          navigator.serviceWorker.register("./service-worker.js");
         });
       }
     </script>
-  <script type="text/javascript" src="assets/js/vendors.b81bf959442454116307.js"></script><script type="text/javascript" src="assets/js/app.b81bf959442454116307.js"></script></body>
+  <script type="text/javascript" src="assets/js/vendors.e162bf62bab479d45a2c.js"></script><script type="text/javascript" src="assets/js/app.e162bf62bab479d45a2c.js"></script></body>
 </html>
